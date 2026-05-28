@@ -58,6 +58,24 @@ I successfully built and executed a hierarchical multi-agent orchestration syste
 
 ---
 
+### ⛓️ Session 4: Sequential Chaining (Linear Workflows)
+
+I successfully configured and executed a linear multi-agent workflow where agents communicate sequentially by sharing a persistent session state! Here is a simple explanation of what I did:
+
+1. **Created Sub-Agent Roles**:
+   - `foodie_agent`: Specialized in finding high-quality dining/venue suggestions. I configured it with `output_key="destination"` so its final response is automatically saved in the session's shared state under that key.
+   - `transportation_agent`: Designed to act as a navigation helper. By using the `{destination}` placeholder in its instructions, it dynamically retrieves the destination from the session state and plans routes from the user's start location.
+2. **Linear Pipeline Orchestration**: Grouped both agents under a `SequentialAgent` named `find_and_navigate_agent`. This ensures the first agent completely finishes and writes to state before the second agent starts.
+3. **Execution & Trace Verification**:
+   - Submitted the prompt: *"I am at Secundrabad railway station and I want to watch IPL at Uppal Stadium (Rajiv Gandhi International Cricket Stadium)."*
+   - First, `foodie_agent` resolved the stadium as **Rajiv Gandhi International Cricket Stadium (Uppal Stadium)**.
+   - Second, `transportation_agent` injected the stadium name, parsed "Secundrabad railway station" as the start, searched public transit details, and generated detailed routes (Hyderabad Metro Blue Line, bus, and taxi directions).
+   - The trace logs successfully verified the clean, sequential execution flow.
+
+![Session 4 Sequential Trace](screenshots/session4_sequential.png)
+
+---
+
 ## Starter Resources
 All the original labs, agent folders, and workflow setup files are included in this workspace.
 
