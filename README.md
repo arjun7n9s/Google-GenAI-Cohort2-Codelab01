@@ -124,6 +124,30 @@ I successfully built and validated an iterative critique-and-refinement multi-ag
 
 ---
 
+### 🛠️ Session 7: Custom Agents (Imperative Python Workflows)
+
+I successfully designed, built, and executed a custom agent class in Python by inheriting from `BaseAgent`! This allowed me to write standard Python conditional gates, data sanitization, and budget-tracking loops to coordinate specialist LLM agents exactly like an imperative software application. Here is a simple explanation of what I did:
+
+1. **Subclassed `BaseAgent`**: Created a custom `BudgetAwarePlannerAgent` class.
+2. **Defined Sub-Agent Helpers**: Instantiated four dedicated helper sub-agents (`BudgetParserAgent`, `ActivityFinderAgent`, `CostEstimatorAgent`, `RestaurantFinderAgent`) inside the constructor.
+3. **Wrote Custom Imperative Logic**: Inside `_run_async_impl`, I wrote standard Python code to control execution:
+   - Parsed the numerical budget.
+   - Discovered a Sunnyvale museum and estimated its ticket cost using search.
+   - **Decision Gate 1 (Python)**: If the activity cost fits in the budget, it is added and a feedback agent is triggered.
+   - Discovered a restaurant (averaging $35.00).
+   - **Decision Gate 2 (Python)**: If the accumulated cost fits within the remaining budget, it is added.
+   - Structured the successfully compiled items into a template and called a `SummaryAgent` to present the final plan.
+4. **Execution & Trace Verification**:
+   - Sent the prompt: *"I want to plan a fun day out in Sunnyvale. My total budget is $50."*
+   - The budget parser successfully extracted `50`.
+   - The agents found **Rosicrucian Egyptian Museum** ($15.00 ticket price) and **Dish Dash** restaurant ($35.00).
+   - The Python code calculated the total cost ($15.00 + $35.00 = $50.00), verified it perfectly matched the budget threshold, and generated a formatted, template-compliant trip plan.
+   - The trace logs successfully verified the execution order of all custom sub-agents.
+
+![Session 7 Custom Agent Run](screenshots/session7_custom_agent.png)
+
+---
+
 ## Starter Resources
 All the original labs, agent folders, and workflow setup files are included in this workspace.
 
