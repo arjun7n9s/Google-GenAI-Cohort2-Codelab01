@@ -4,7 +4,7 @@ My personal repository for the Google GenAI Academy APAC Cohort 2 Codelab.
 
 ## Log & Updates
 
-### 🧞 Session 1: Your First Agent with Runner (Completed - 2026-05-28)
+### 🧞 Session 1: Your First Agent with Runner
 
 I successfully completed the setup and ran the first agent! Here is a simple explanation of what I did:
 
@@ -13,8 +13,6 @@ I successfully completed the setup and ran the first agent! Here is a simple exp
 3. **API Key Integration**: Created a root `.env` file and configured my Google AI Studio API key.
 4. **Fixing the Quota Bug**: Originally the codebase was using `gemini-2.0-flash`, which was hitting a daily free quota limit. I upgraded the model definition in `a_single_agent/day_trip.py` to `gemini-2.5-flash` which is newer and has fresh free tier quota limits.
 5. **Testing the Agent**: Fired up the local ADK web interface with `adk web` and created a fresh chat session. I asked the agent for a weekend trip to chill out around Bangalore in this hot summer. The agent used its built-in Google Search capability to construct a perfect, budget-aware day-trip suggestion to Chikmagalur (with precise coordinates and a details log).
-
-Here is a screenshot of my successful interaction in the Web UI:
 
 ![Session 1 Test Output](screenshots/session1_dating_planner.png)
 
