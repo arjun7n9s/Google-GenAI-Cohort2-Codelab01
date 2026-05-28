@@ -101,6 +101,29 @@ I successfully designed and ran a high-speed concurrent research workflow where 
 
 ---
 
+### 🔄 Session 6: Critique & Refinement Loops (Optimization)
+
+I successfully built and validated an iterative critique-and-refinement multi-agent planning loop that optimizes plans dynamically based on constraints! Here is a simple explanation of what I did:
+
+1. **Created Critique & Refinement Loop Roles**:
+   - `planner_agent`: Generates the initial trip proposal containing one activity and one restaurant.
+   - `critic_agent`: Evaluates the proposed venues using Google Search. If travel time exceeds 45 minutes, it issues a critique; otherwise, it outputs a feasibility approval phrase.
+   - `refiner_agent`: Receives criticism and researches alternative nearby locations to overwrite the plan.
+   - `exit_agent`: Monitors the validation state and triggers the custom Python tool `exit_loop` (setting `escalate = True`) to break the cycle when constraints are satisfied.
+2. **Assembled Loop Logic**:
+   - Grouped the critic, refiner, and exit agents inside a `LoopAgent` called `refinement_loop` with a maximum of 3 iterations.
+   - Chained it sequentially after `planner_agent` in a root `iterative_planner_agent` container.
+3. **Execution & Trace Verification**:
+   - Submitted the prompt: *"Plan a trip in San Francisco where I visit a cool museum and eat dinner, but keep the travel time very short."*
+   - In its first run, `planner_agent` suggested **Exploratorium** (Pier 15) and **La Mar Cebicheria Peruana** (Pier 1.5).
+   - `critic_agent` calculated that the travel time is a simple **5-minute walk**, confirming the plan was fully optimized right away.
+   - The loop controller caught the completion signal and triggered the custom `exit_loop` tool to exit immediately.
+   - The nested trace graph verified the correct execution of the critique-refine cycle.
+
+![Session 6 Loop Run](screenshots/session6_loop.png)
+
+---
+
 ## Starter Resources
 All the original labs, agent folders, and workflow setup files are included in this workspace.
 
