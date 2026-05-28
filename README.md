@@ -71,8 +71,9 @@ I successfully configured and executed a linear multi-agent workflow where agent
    - First, `foodie_agent` resolved the stadium as **Rajiv Gandhi International Cricket Stadium (Uppal Stadium)**.
    - Second, `transportation_agent` injected the stadium name, parsed "Secundrabad railway station" as the start, searched public transit details, and generated detailed routes (Hyderabad Metro Blue Line, bus, and taxi directions).
    - The trace logs successfully verified the clean, sequential execution flow.
-
-![Session 4 Sequential Trace](screenshots/session4_sequential.png)
+| Initial Request (Secunderabad Station → Uppal Stadium) | Follow-up Contextual Request (Uppal Stadium → Chinese Food) |
+| :---: | :---: |
+| ![Session 4 Initial](screenshots/session4_sequential.png) | ![Session 4 Follow-up](screenshots/session4_sequential_followup.png) |
 
 ---
 
