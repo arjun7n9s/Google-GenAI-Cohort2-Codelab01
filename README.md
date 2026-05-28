@@ -1,86 +1,22 @@
-# ADK Day Trip Planning Agent
+# Google GenAI Cohort 2 - ADK Codelab Labs
 
-A specialized AI agent built with Google's AI Development Kit (ADK) that generates creative and fun day trip plans based on user preferences, location, and budget constraints.
+My personal repository for the Google GenAI Academy APAC Cohort 2 Codelab. 
 
-**Please make sure to check [goo.gle/advancedadk](https://goo.gle/advancedadk) to set up this project.**
+## Log & Updates
 
-## Features
+- **First Update (2026-05-28)**: Just pulled all the given resources and starter code from [cuppibla/ADK_Basic](https://github.com/cuppibla/ADK_Basic.git) into my local workspace and initialized this repository. Setup the virtual environment and successfully verified the sequential agent runner!
 
-- 🎯 **Personalized Planning**: Generates trip suggestions based on user interests and preferences
-- 📍 **Location-Aware**: Works with city names, addresses, or GPS coordinates
-- 💰 **Budget-Conscious**: Targets moderate budget activities (affordable yet valuable)
-- 🔍 **Real-Time Search**: Uses Google Search to find current events and venues
-- 📅 **Date-Specific**: Plans activities for specific weekend dates
-- 🎨 **Creative Suggestions**: Maximum 3 distinct activities per plan with detailed location information
+---
 
-## Tutorial
+## Starter Resources
+All the original labs, agent folders, and workflow setup files are included in this workspace.
 
-For a guided walkthrough of how to set up this project, please refer to the [tutorial](https://goo.gle/advancedadk).
-
-## Prerequisites
-
-- Python 3.8 or higher
-- Google Cloud SDK installed and authenticated (`gcloud auth login`)
-
-## Quick Setup
-
-This project uses a setup script to configure the environment automatically. Simply run the script for your operating system.
-
-### For Mac/Linux Users
-
-```bash
-chmod +x setup_venv.sh
-./setup_venv.sh
-```
-
-### For Windows Users
-
-```cmd
-setup_venv.bat
-```
-
-### What the Script Does
-
-The setup script will:
-
-1.  **Check for Python**: Ensures you have Python 3.8 or higher.
-2.  **Create a Virtual Environment**: Sets up a dedicated `.adk_env` directory.
-3.  **Install Dependencies**: Installs the required Python packages from `requirements.txt`.
-4.  **Prompt for Project ID**: Asks for your Google Cloud Project ID.
-5.  **Create `.env` File**: Generates a `.env` file in the root directory with the following configuration:
-
-    ```env
-    GOOGLE_GENAI_USE_VERTEXAI=TRUE
-    GOOGLE_CLOUD_PROJECT=your_project_id
-    GOOGLE_CLOUD_LOCATION=us-central1
-    ```
-
-## Running the Agent
-
-After the setup is complete:
-
-1.  **Activate the virtual environment**:
-
-    **Mac/Linux:**
-    ```bash
-    source .adk_env/bin/activate
-    ```
-
-    **Windows:**
-    ```cmd
-    .adk_env\Scripts\activate
-    ```
-
-2.  **Run the ADK web interface**:
-
-    ```bash
-    adk web
-    ```
-
-## Deactivating the Environment
-
-When you're done, you can deactivate the virtual environment:
-
-```bash
-deactivate
-```
+- `a_single_agent/` - Basic agent configuration
+- `b1_sequential_agent/` - SequentialAgent setup
+- `b2_parallel_agent/` - ParallelAgent setup
+- `b3_loop_agent/` - LoopAgent setup
+- `b4_manual_sequential_flow/` - Manual routing and sequentially executing agents
+- `c_custom_agent/` - Creating custom agent setups
+- `d_routing_agent/` - Router agent setup
+- `e_agent_as_tool/` - Agent-as-a-Tool implementation
+- `f_agent_with_memory/` - Context-aware agent setup with conversational memory
