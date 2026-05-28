@@ -66,4 +66,4 @@ trip_architect_agent = Agent(
 
 # --- 3. Set the Root Agent ---
 root_agent = trip_architect_agent
-print("🤖 Trip Architect Agent, with agents as tools, is ready.")
+print("Trip Architect Agent, with agents as tools, is ready.")

@@ -69,6 +69,6 @@ iterative_planner_agent = SequentialAgent(
     description="A workflow that iteratively plans and refines a trip to meet constraints."
 )
 
-print("🤖 Agent team updated with an iterative LoopAgent workflow!")
+print("Agent team updated with an iterative LoopAgent workflow!")
 
 root_agent = iterative_planner_agent

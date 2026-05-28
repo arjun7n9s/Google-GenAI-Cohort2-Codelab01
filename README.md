@@ -36,6 +36,28 @@ I successfully built and integrated custom Python functions as tools inside the 
 
 ---
 
+### 🧱 Session 3: Agent-as-a-Tool (Multi-Agent Architectures)
+
+I successfully built and executed a hierarchical multi-agent orchestration system where agents use other specialized agents as tools! Here is a simple explanation of what I did:
+
+1. **Created Specialized Specialist Agents**: Defined two expert sub-agents:
+   - `LocationScoutAgent`: An expert finder tasked with finding specific venues matching a user query using Google Search and returning only its name.
+   - `LogisticsValidatorAgent`: A travel coordinator designed to find travel times between points or retrieve operating hours.
+2. **Built the Trip Architect (Orchestrator)**: Configured the root `TripArchitectAgent` and wrapped the specialized sub-agents inside `AgentTool` wrappers. The architect follows a self-correcting cognitive loop:
+   - Deconstructs the user request, finds a primary activity, finds a meal venue, and calculates travel time.
+   - **Self-Correction Loop**: If travel time exceeds 20 minutes, it automatically discards the venue, queries the scouts again for a closer restaurant, and outputs the final plan without user intervention.
+3. **Execution & Trace Validation**:
+   - Manually launched the server in my terminal and successfully connected to the local ADK Web UI.
+   - Provided the prompt: *"I want to visit a technology museum and eat at a moderately priced South Indian restaurant in Jabalpur."*
+   - Behind the scenes, the root agent dynamically spawned tool-calls to `LocationScoutAgent` (which discovered **AOC Museum** and **SSS Veg South Indian Restaurant**) and `LogisticsValidatorAgent` (which calculated a travel time of **15 minutes**).
+   - The architect verified the travel time was within the 20-minute threshold and returned a completed, structured itinerary.
+
+| Successful Multi-Agent Execution | Terminal Command Logs & Web Server |
+| :---: | :---: |
+| ![Session 3 Web UI](screenshots/session3_agent_as_tool.png) | ![Session 3 Terminal Command Logs](screenshots/session3_terminal.png) |
+
+---
+
 ## Starter Resources
 All the original labs, agent folders, and workflow setup files are included in this workspace.
 

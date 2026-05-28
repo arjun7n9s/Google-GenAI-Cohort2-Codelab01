@@ -134,5 +134,5 @@ router_agent = Agent(
 )
 
 
-print("🤖 Agent team assembled with a SequentialAgent workflow!")
+print("Agent team assembled with a SequentialAgent workflow!")
 root_agent = router_agent

@@ -77,4 +77,4 @@ root_agent = LlmAgent(
     ]
 )
 
-print("🤖 Memory Coordinator Agent (with ADK Session Service) is ready.")
+print("Memory Coordinator Agent (with ADK Session Service) is ready.")

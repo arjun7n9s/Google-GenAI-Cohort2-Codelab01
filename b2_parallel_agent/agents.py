@@ -58,4 +58,4 @@ parallel_planner_agent = SequentialAgent(
 )
 
 root_agent = parallel_planner_agent
-print("🤖 Agent team supercharged with a ParallelAgent workflow!")
+print("Agent team supercharged with a ParallelAgent workflow!")
