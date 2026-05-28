@@ -148,6 +148,27 @@ I successfully designed, built, and executed a custom agent class in Python by i
 
 ---
 
+### 🚦 Session 8: Routing Agents (Dynamic Orchestration)
+
+I successfully built and validated a dynamic travel coordinator using the Router Agent pattern! This master agent acts as the main gateway, dynamically analyzing user requests and routing them to the single best specialist agent or workflow from its team. Here is a simple explanation of what I did:
+
+1. **Configured the Master Router**:
+   - Assembled a team of specialist workflows (`iterative_planner_agent`, `parallel_planner_agent`, `BudgetAwarePlannerAgent`, `find_and_navigate_agent`, etc.) under the root `router_agent`.
+   - Programmed decision-making logic: if budget is mentioned → route to `BudgetAwarePlannerAgent`; if distance optimization is requested → route to `iterative_planner_agent`; if diverse items are requested → route to `parallel_planner_agent`.
+2. **Dynamic Routing & Execution**:
+   - Prompted the router with a multi-criteria request in a new city: *"For my trip to Bangalore, find me a great art museum, an indie rock concert, and a top-rated cafe for breakfast."*
+   - The router analyzed the query, matched the multiple diverse interests, and dynamically called the `transfer_to_agent` tool to dispatch the task to `parallel_planner_agent`.
+   - The parallel agents executed simultaneously in Bangalore (discovering **NGMA**, the rock band **Dark Light**, and **Vidyarthi Bhavan**), and the synthesizer presented the perfect merged recommendations list.
+3. **Trace Validation**:
+   - Inspected the beautiful **Visual Architecture Trace Graph** displaying the complete hierarchical routing layout of our agent team.
+   - The execution logs confirmed the router seamlessly transferred control and returned the finalized results.
+
+| Complete Visual Architecture Trace Graph | Dynamic Routed Execution (Bangalore) |
+| :---: | :---: |
+| ![Agent Team Architecture](screenshots/session8_architecture.png) | ![Bangalore Routed Run](screenshots/session8_routing.png) |
+
+---
+
 ## Starter Resources
 All the original labs, agent folders, and workflow setup files are included in this workspace.
 
