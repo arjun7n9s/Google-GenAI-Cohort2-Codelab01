@@ -77,6 +77,30 @@ I successfully configured and executed a linear multi-agent workflow where agent
 
 ---
 
+### 👯 Session 5: Parallel Research & Synthesis (Concurrence)
+
+I successfully designed and ran a high-speed concurrent research workflow where multiple specialized agents executed simultaneously and synthesized their results! Here is a simple explanation of what I did:
+
+1. **Created Parallel Specialist Sub-Agents**:
+   - `museum_finder_agent`: Searches for a fitting museum and saves it to `museum_result`.
+   - `concert_finder_agent`: Looks up active concert/band details and saves it to `concert_result`.
+   - `restaurant_finder_agent`: Identifies top-rated restaurants and saves it to `restaurant_result`.
+2. **Orchestrated Concurrent Operations**:
+   - Wrapped the three researchers in a `ParallelAgent` container named `parallel_research_agent`. This triggers all three sub-agents at the exact same moment.
+   - Chained it sequentially into a `synthesis_agent` that reads `{museum_result}`, `{concert_result}`, and `{restaurant_result}` from the shared session state to print a formatted bulleted overview.
+3. **Execution & Trace Verification**:
+   - Provided the request: *"I am visiting Bangalore this weekend. Find me a great art museum, an indie rock concert, and a top-rated cafe for breakfast."*
+   - In parallel, the agents queried Google Search and resolved:
+     - Museum: **National Gallery of Modern Art (NGMA) Bangalore**.
+     - Concert: **Dark Light** (Bangalore progressive rock band).
+     - Restaurant: **MTR (Mavalli Tiffin Rooms)**.
+   - The coordinator consolidated these into an elegant recommendations list.
+   - The trace logs confirmed the three search operations executed concurrently in parallel.
+
+![Session 5 Parallel Run](screenshots/session5_parallel.png)
+
+---
+
 ## Starter Resources
 All the original labs, agent folders, and workflow setup files are included in this workspace.
 
