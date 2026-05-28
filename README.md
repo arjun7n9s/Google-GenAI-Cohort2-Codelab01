@@ -18,6 +18,19 @@ I successfully completed the setup and ran the first agent! Here is a simple exp
 
 ---
 
+### 🛠️ Session 2: Custom Tools
+
+I successfully built and integrated custom Python functions as tools inside the agent! Here is a simple explanation of what I did:
+
+1. **Created Custom Python Tools**: Defined two custom Python functions (`save_user_preferences` and `recall_user_preferences`) that take `tool_context: ToolContext` to read/write state directly to the session memory.
+2. **LLM Schema Generation**: Handled how the ADK parses custom function signatures and docstrings to automatically generate JSON schemas so the LLM knows how to call them.
+3. **Equipped the Agent**: Bound these custom tools to the `MemoryCoordinatorAgent` under `f_agent_with_memory/agents.py`.
+4. **Execution and State persistence**: Fired up the agent and told it my preferences: *"I love eating Hyderabadi biryani and watching movies"*. Behind the scenes, the agent successfully executed the `recall_user_preferences` tool, routed the request to a specialist planner to suggest **Bagara's - Hyderabadi Biryani** and **AMC Sunnyvale 12**, and then executed the `save_user_preferences` tool to write these new preferences directly to the SQLite session database.
+
+![Session 2 Test Output](screenshots/session2_custom_tools.png)
+
+---
+
 ## Starter Resources
 All the original labs, agent folders, and workflow setup files are included in this workspace.
 
