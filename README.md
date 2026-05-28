@@ -29,6 +29,11 @@ I successfully built and integrated custom Python functions as tools inside the 
 
 ![Session 2 Test Output](screenshots/session2_custom_tools.png)
 
+#### Persistent Session State & Tool Execution Details:
+| Stored Preferences in sqlite DB | Tool Call Graph & JSON Response |
+| :---: | :---: |
+| ![Session 2 State](screenshots/session2_custom_tools_state.png) | ![Session 2 Trace Graph](screenshots/session2_custom_tools_trace.png) |
+
 ---
 
 ## Starter Resources
